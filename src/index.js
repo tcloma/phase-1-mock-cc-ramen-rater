@@ -1,17 +1,20 @@
+/* Deliverable 1 */
 //Fetch data from db.json
-//Pull the image source from ramen data
-//Create an image element and append it to the ramen menu div
-//Pull data from the ramen db to insert into the details
+//Pull the image source from db.json
+//Create an image element and append it to the "ramen-menu" div
+
+/* Deliverable 2 */
+//Add an event listener to the img that does something on click
+//Pull HTML elements that need to be filled with data
+//Change HTML element properties with data from db.json
 
 
 //Fetching data
 const fetchData = () =>{
     fetch('http://localhost:3000/ramens')
     .then(res => res.json())
-    .then (data => data.forEach(data => {
-        console.log(data)
-        createImage(data)}))
-    }
+    .then (data => data.forEach(data => {/* console.log(data)*/createImage(data)})) 
+}
 fetchData()
 
 let ramenMenu = document.getElementById('ramen-menu')
@@ -20,7 +23,7 @@ let ramenMenu = document.getElementById('ramen-menu')
 const createImage = (data) => {
     let ramenImg = document.createElement('img')
     ramenImg.src = data.image
-    console.log(ramenImg)
+    // console.log(ramenImg)
     ramenMenu.append(ramenImg)
 
     //adding click functionality
@@ -44,12 +47,14 @@ const createImage = (data) => {
     })
 }
 
+//Deliverable 3
+
 //Prevent default submit button behavior
 //Take input values from each field after submit is clicked
 //Pass new values through createImage() function
 
 
-let newRamen = document.querySelector('#new-ramen')
+let newRamenForm = document.querySelector('#new-ramen')
 let submitBtn = document.querySelector('#submit-button')
 
 submitBtn.addEventListener('click', () => {
@@ -64,9 +69,9 @@ submitBtn.addEventListener('click', () => {
     let newRating = document.querySelector('#new-rating').value
     let newComment = document.querySelector('#new-comment').value
 
-    console.log(newName, newRestaurant, newImage, newRating, newComment)
+    // console.log(newName, newRestaurant, newImage, newRating, newComment)
 
-    //Consolidating values and passing through createImage()
+    //Consolidating values and passing the variable through createImage()
     let newRamen = 
         {
             "name": newName, 
@@ -76,7 +81,6 @@ submitBtn.addEventListener('click', () => {
             "comment": newComment
         }
     
-
-    console.log(newRamen)
+    // console.log(newRamen)
     createImage(newRamen)
 })
