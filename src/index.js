@@ -28,7 +28,7 @@ const createImage = (data) => {
 
     //adding click functionality
     ramenImg.addEventListener('click', () =>{
-        console.log('ramen')
+        // console.log('ramen')
         //Reference all elements we want to change
         let detailImage = document.querySelector('.detail-image')
         let ramenName = document.querySelector('.name')
