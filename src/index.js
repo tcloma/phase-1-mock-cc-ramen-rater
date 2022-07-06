@@ -67,7 +67,7 @@ submitBtn.addEventListener('click', () => {
     console.log(newName, newRestaurant, newImage, newRating, newComment)
 
     //Consolidating values and passing through createImage()
-    let newRamen = [
+    let newRamen = 
         {
             "name": newName, 
             "restaurant": newRestaurant,
@@ -75,7 +75,7 @@ submitBtn.addEventListener('click', () => {
             "rating": newRating,
             "comment": newComment
         }
-    ]
+    
 
     console.log(newRamen)
     createImage(newRamen)
